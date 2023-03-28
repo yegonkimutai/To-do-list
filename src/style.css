@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: gray;
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  border: 1px solid #fff;
+  background-color: #fff;
+  width: 70%;
+  height: 100%;
+  margin: 50px auto;
+}
+
+.header {
+  display: flex;
+}
+
+.container h1 {
+  font-size: 20px;
+  margin-left: 10px;
+  color: gray;
+}
+
+.refresh {
+  color: grey;
+  position: absolute;
+  left: 82%;
+  margin-top: 15px;
+}
+
+.container input {
+  border: none;
+  margin: 10px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.add {
+  position: absolute;
+  right: 16%;
+  margin-top: 10px;
+  color: grey;
+}
+
+#to-do-list div {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid grey;
+  width: 100%;
+}
+
+#to-do-list span {
+  position: absolute;
+  left: 83%;
+  margin-top: 15px;
+  color: grey;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 17px;
+  color: grey;
+  border-top: 1px solid grey;
+  padding: 10px;
+}
