@@ -1,43 +1,54 @@
 import './style.css';
 
-const list = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'learn to make a to-do list with webpack',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'complete to do list project',
-    completed: false,
-    index: 2,
-  },
-];
-
-const displayTask = () => {
+  const form = document.getElementById("entry");
+  const input = document.getElementById("text");
   const todo = document.getElementById('to-do-list');
+  
+  let lists = JSON.parse(localStorage.getItem('lists')) || [];
+  if(localStorage.getItem('lists')) {
+    lists.map((task) => {
+      createList(task)
+    })
+  }
 
-  const sortTask = list.sort((one, two) => one.index - two.index);
+  form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-  const items = sortTask.map((task) => {
-    const element = document.createElement('div');
+      const value = input.value;
+      if(value === '') {
+          return
+      }
+
+      const task = {
+          id: (lists.length + 1),
+          name: value,
+          complete: false 
+      }
+
+      lists.push(task);
+      localStorage.setItem('lists', JSON.stringify(lists));
+
+      createList(task);
+
+      form.reset();
+      input.focus();
+  });
+
+  function createList(task) {
+    const element = document.createElement('div')
+
+    element.setAttribute('id', task.id);
+
     element.innerHTML = `
-        <input type="checkbox">
-        <p> ${task.description} </p>
-        <br>
-        <span>&#8942;</span>
-        `;
+    <input type="checkbox" id="${task.id}">
+    <p> "${task.name}" </p>
+    <br>
+    <span>&#8942;</span>
+    `;
 
-    return element;
-  });
+    todo.append(element);
 
-  items.forEach((element) => {
-    todo.appendChild(element);
-  });
-};
-
-displayTask();
+    if(task.complete) {
+      element.classList.add('complete')
+    }
+  };

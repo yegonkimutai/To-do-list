@@ -42,6 +42,8 @@ body {
   right: 16%;
   margin-top: 10px;
   color: grey;
+  background: #fff;
+  border: none;
 }
 
 #to-do-list div {
@@ -58,10 +60,16 @@ body {
   color: grey;
 }
 
-.container h2 {
+.clear {
   text-align: center;
   font-size: 17px;
   color: grey;
   border-top: 1px solid grey;
   padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.complete {
+  text-decoration: line-through;
 }
