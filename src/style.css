@@ -27,7 +27,6 @@ body {
   color: grey;
   position: absolute;
   left: 82%;
-  margin-top: 15px;
 }
 
 .container input {
@@ -39,29 +38,51 @@ body {
 
 .add {
   position: absolute;
-  right: 16%;
+  right: 17%;
   margin-top: 10px;
   color: grey;
+  background: #fff;
+  border: none;
 }
 
-#to-do-list div {
+.to-do-list {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid grey;
   width: 100%;
 }
 
-#to-do-list span {
+.update {
   position: absolute;
-  left: 83%;
+  left: 82%;
   margin-top: 15px;
   color: grey;
 }
 
-.container h2 {
+.clear {
   text-align: center;
   font-size: 17px;
   color: grey;
-  border-top: 1px solid grey;
   padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.complete input {
+  text-decoration: line-through;
+}
+
+.refresh:hover {
+  cursor: pointer;
+}
+
+.add:hover {
+  cursor: pointer;
+}
+
+.update:hover {
+  cursor: pointer;
+}
+
+.clear:hover {
+  cursor: pointer;
 }
