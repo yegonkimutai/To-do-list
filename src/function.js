@@ -1,11 +1,13 @@
-// Variable initialization
+import { changeStatus, clearCompleted } from './complete.js';
+
+// To-do-list initialization
 let lists = JSON.parse(localStorage.getItem('lists')) || [];
 
 if (localStorage.getItem('lists') !== null) {
   lists = JSON.parse(localStorage.getItem('lists'));
 }
 
-// index and local storage update
+// Index and Local storage update
 function updateIndex() {
   lists.forEach((list, index) => {
     list.index = index + 1;
@@ -13,7 +15,7 @@ function updateIndex() {
   localStorage.setItem('lists', JSON.stringify(lists));
 }
 
-// create list
+// Create list
 export default function createTasks() {
   const container = document.getElementById('main-list');
   const head = document.createElement('div');
@@ -53,10 +55,11 @@ export default function createTasks() {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = task.completed;
-    // checkbox event listener
-    checkbox.addEventListener('click', () => {
-      task.completed = checkbox.checked;
+    // checkbox event listener for complete update
+    checkbox.addEventListener('change', () => {
       box.classList.toggle('complete');
+      changeStatus(task);
+      localStorage.setItem('lists', JSON.stringify(lists));
     });
 
     const description = document.createElement('input');
@@ -72,6 +75,7 @@ export default function createTasks() {
     listIcon.classList.add('update');
     listIcon.innerHTML = '&#128465;';
 
+    // Remove list from UI
     listIcon.addEventListener('click', () => {
       const index = lists.indexOf(task);
       lists.splice(index, 1);
@@ -102,9 +106,9 @@ export default function createTasks() {
   clearBtn.classList.add('clear');
   clearBtn.type = 'button';
   clearBtn.textContent = 'Clear all completed';
-  // clearBtn event listener
+  // clearBtn event listener and local storage update
   clearBtn.addEventListener('click', () => {
-    lists = lists.filter((task) => !task.completed);
+    lists = clearCompleted(lists);
     container.innerHTML = '';
     localStorage.setItem('lists', JSON.stringify(lists));
     updateIndex();
