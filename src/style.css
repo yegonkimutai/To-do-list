@@ -38,7 +38,7 @@ body {
 
 .add {
   position: absolute;
-  right: 16%;
+  right: 17%;
   margin-top: 10px;
   color: grey;
   background: #fff;
@@ -53,7 +53,7 @@ body {
 
 .update {
   position: absolute;
-  left: 83%;
+  left: 82%;
   margin-top: 15px;
   color: grey;
 }

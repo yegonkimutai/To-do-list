@@ -70,10 +70,13 @@ export default function createTasks() {
 
     const listIcon = document.createElement('span');
     listIcon.classList.add('update');
-    listIcon.innerHTML = '&#8942;';
+    listIcon.innerHTML = '&#128465;';
 
     listIcon.addEventListener('click', () => {
-      task.description = description.value;
+        const index = lists.indexOf(task);
+        lists.splice(index, 1);
+        updateIndex();
+        box.remove();
     });
 
     box.appendChild(checkbox);
