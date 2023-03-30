@@ -73,10 +73,10 @@ export default function createTasks() {
     listIcon.innerHTML = '&#128465;';
 
     listIcon.addEventListener('click', () => {
-        const index = lists.indexOf(task);
-        lists.splice(index, 1);
-        updateIndex();
-        box.remove();
+      const index = lists.indexOf(task);
+      lists.splice(index, 1);
+      updateIndex();
+      box.remove();
     });
 
     box.appendChild(checkbox);
