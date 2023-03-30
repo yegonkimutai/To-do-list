@@ -67,6 +67,22 @@ body {
   width: 100%;
 }
 
-.complete input{
+.complete input {
   text-decoration: line-through;
+}
+
+.refresh:hover {
+  cursor: pointer;
+}
+
+.add:hover {
+  cursor: pointer;
+}
+
+.update:hover{
+  cursor: pointer;
+}
+
+.clear:hover{
+  cursor: pointer;
 }
