@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](Coming soon)
+- [Live Demo Link](https://yegonkimutai.github.io/checklist.github.io/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
