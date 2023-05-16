@@ -86,3 +86,9 @@ body {
 .clear:hover {
   cursor: pointer;
 }
+
+@media (max-width: 500px) {
+  .container{
+    width: 95%;
+  }
+}
