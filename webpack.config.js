@@ -7,16 +7,11 @@ module.exports = {
   output: {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   devServer: {
-    static: { directory: path.resolve(__dirname, 'dist') },
-    port: 5000,
-    open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
+    static: './dist',
   },
-
   module: {
     rules: [
       {
